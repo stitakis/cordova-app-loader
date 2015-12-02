@@ -6,11 +6,22 @@
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src * 'self' cdvfile://*; style-src 'unsafe-inline' 'self' cdvfile://*; script-src 'self' 'unsafe-eval' cdvfile://*">-->
+
+        <!-- This policy allows everything (eg CSS, AJAX, object, frame, media, etc) except that
+    * CSS only from the same origin and inline styles,
+    * scripts only from the same origin and inline styles, and eval()
+-->
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">-->
+
+        <meta http-equiv="Content-Security-Policy" content="default-src *">
+
+
+        <script src="http://jsconsole.com/remote.js?iqosapp"></script>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" 
-            timeout="5100" 
-            manifest="manifest.json" 
-            src="bootstrap.js"></script>
+        <script type="text/javascript" src="cordova-app-loader-complete.js"></script>
+        <script src="bootstrap.js" timeout="5100" manifest="manifest.json" server="http://10.0.2.2:8080/"></script>
+        <!--<script type="text/javascript" timeout="5100" manifest="manifest.json" src="bootstrap.js"></script>-->
     </head>
     <body>
     </body>
